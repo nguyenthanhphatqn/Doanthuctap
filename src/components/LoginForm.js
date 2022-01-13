@@ -12,13 +12,10 @@ function LoginForm({Login, error}) {
     return (
         <form onSubmit={submitHandler}>
             <div className='form-inner'>
-                <img src='./img/LogoAlta.png' alt='' className='img-logo'></img>
-                <div className='logo'>
-                    <div className='container'>
-                    <div className='form-group'>
+                <div className='container'>
+                <div className='form-group'>
                     <label className='email' htmlFor='email'>Tên đăng nhập* <br/></label>
                     <input className='IPemail' type="email" name='email' id='email'  onChange={e => setDetails({...details, email: e.target.value})} value={details.email}></input>
-                </div>
                 <div className='form-group'>
                     <label className='password' htmlFor='password'>Mật khẩu* <br/></label>
                     <input className='IPpassword' type="password" name='password' id='password' onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
