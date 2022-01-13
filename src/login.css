@@ -12,10 +12,11 @@
   
 }  
 .container{
-  border: 1px solid red;
-  width: 400px;
+  /* border: 1px solid red; */
+  width: 385px;
   position: fixed;
   top: 40%;
+  left: 10%;
   float: left !important;
 }
 .form-group {
@@ -48,22 +49,22 @@ label {
 }
 
  .form-inner {
-  /* background-image: url(./img/LogoAlta.png);
+  background-image: url(./img/LogoAlta.png);
   height: 300px;
  
-  background-repeat: no-repeat; */
-  /* min-width: 400px;
-  max-height: 44px;
-  margin: 0px 0px 0px 0px;
-  padding: 10px, 270px, 10px, 12px;
-  max-width: fit-content; */
+  background-repeat: no-repeat; 
+  min-width: 400px;
+  max-height: 500px;
+  max-width: fit-content;
+  /* margin: 0px 0px 0px 0px;
+  padding: 10px, 270px, 10px, 12px; */
+
   
  
 } 
 
 .IPemail{
  width: 100%;
-  /* padding-left: 30px; */
   font-size: 20px;
   border-radius: 8px;
   border-color: #D4D4D7;
@@ -76,9 +77,11 @@ label {
   border-radius: 8px;
 }
 .forgot {
-  margin-top: 20px;
-  margin-right: 150px;
   float: right;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 130%;
   color: #FF7506;
   
 }
