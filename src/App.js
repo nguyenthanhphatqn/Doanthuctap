@@ -1,44 +1,21 @@
-import React, { useState } from 'react';
-import LoginForm from './components/LoginForm';
+import React from 'react';
+import Login from './components/LoginForm';
+import ForgotPass from './components/ForgotPass';
+import ResetPass from './components/ResetPass';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+
 
 function App() {
-  const adminUser = {
-    email: "phat@gmail.com",
-    password: "phat123"
-  }
-
-  const [user, setUser] = useState({email: ""});
-  const [error, setError] = useState("");
-
-  const Login = details => {
-    console.log(details);
-
-    if (details.email == adminUser.email && details.password == adminUser.password) {
-      console.log("Logged in");
-      setUser({
-        email: details.email
-      });
-    } else {
-      console.log("Sai mật khẩu hoặc tên đăng nhập!");
-      setError("Sai mật khẩu hoặc tên đăng nhập!");
-    }
-  }
-
-  const Logout = () => {
-    setUser({email: ""})
-  }
   return (
-    <div className="App">
-      {(user.email != "") ? (
-        <div className='welcome'>
-          <h2>Welcome, <span>{user.email}</span></h2>
-          <button onClick={Logout}>Logout</button>
-        </div>
-      ) : (
-        <LoginForm Login= {Login} error={error}/>
-      )}
-    </div>
-    
+    <BrowserRouter>
+      <div className='App'>
+        <Routes>
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/forgot" element={<ForgotPass/>} />
+          <Route exact path="/reset" element={<ResetPass/>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

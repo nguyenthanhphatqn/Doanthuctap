@@ -1,37 +1,54 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { useState } from 'react';
+import './login.css';
+import logo from './img/LogoAlta.png';
+import background from './img/Background.png';
+import vector from './img/Vector.png';
+import { Link} from 'react-router-dom'
 
-function LoginForm({Login, error}) {
-    const [details, setDetails] = useState({email: "", password: ""});
-
-    const submitHandler = e => {
+class LoginForm extends Component {
+    handleClick = (e) =>{
+        const [details] = useState({email: "", password: ""});
         e.preventDefault();
-
-        Login(details);
+        LoginForm(details);
+        
     }
+render(){
     return (
-        <form onSubmit={submitHandler}>
-            <div className='form-inner'>
-                <div className='container'>
-                <div className='form-group'>
-                    <label className='email' htmlFor='email'>Tên đăng nhập* <br/></label>
-                    <input className='IPemail' type="email" name='email' id='email'  onChange={e => setDetails({...details, email: e.target.value})} value={details.email}></input>
-                <div className='form-group'>
-                    <label className='password' htmlFor='password'>Mật khẩu* <br/></label>
-                    <input className='IPpassword' type="password" name='password' id='password' onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
-                </div>
-                <div>
-                <input className='btnLogin' type="submit" value="Đăng nhập" />
-                </div>
-                <div className='forgot'>
-                    Quên mật khẩu
-                </div>
-                {(error != "") ? (<div className='error'>{error}</div>) : ""}
+        <div className="login">
+            <div className='container-left'>
+                    <div><img src={logo} alt='Logo' className='logo'></img></div>
+                    <form className='login-form'>
+                    <div>
+                        <label>Tên đăng nhập*</label><br />
+                        <input className='email' type="email"/><br/>
                     </div>
-                </div>
+                    <div>
+                        <label>Mật khẩu*</label><br/>
+                        <input className='password' type="password"></input>
+                    </div>
+                    <div><img src={vector} alt='Vector' className ='eye-flash'></img></div>
+                    <div>
+                        <button className='btn-login' onClick={this.handleClick}>Đăng nhập</button>
+                    </div>
+                    <div>
+                        {/* <label className='forgot-pass' onClick={this.handleClick}>Quên mật khẩu?</label> */}
+                        <Link className="link-tag" to="/forgot">
+                            <span className=" forgot-pass">Quên mật khẩu</span>
+                        </Link>
+                    </div>
+                </form>
             </div>
-        </form>
-    )
+            <div className='container-right'>
+                <img src={background} alt='background'className='background'></img>
+                <div className='container-text'>
+                    <p className='text-1'>Hệ thống</p><br />
+                    <div className='text-2'>QUẢN LÝ XẾP HÀNG</div>
+                </div>
+            </div>                
+        </div>
+    );
+    }
 }
 
 export default LoginForm
