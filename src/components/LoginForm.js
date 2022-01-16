@@ -34,14 +34,14 @@ render(){
                     <div>
                         {/* <label className='forgot-pass' onClick={this.handleClick}>Quên mật khẩu?</label> */}
                         <Link className="link-tag" to="/forgot">
-                            <span className=" forgot-pass">Quên mật khẩu</span>
+                            <span className=" forgot-password">Quên mật khẩu</span>
                         </Link>
                     </div>
                 </form>
             </div>
             <div className='container-right'>
                 <img src={background} alt='background'className='background'></img>
-                <div className='container-text'>
+                <div className='container-Text'>
                     <p className='text-1'>Hệ thống</p><br />
                     <div className='text-2'>QUẢN LÝ XẾP HÀNG</div>
                 </div>
