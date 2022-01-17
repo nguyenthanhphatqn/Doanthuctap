@@ -28,7 +28,7 @@ render(){
                 </form>
             </div>
             <div className='container-right'>
-                <img src={frame} alt='bacground'></img>
+                <img src={frame} alt='background'></img>
             </div>                
         </div>
     );
