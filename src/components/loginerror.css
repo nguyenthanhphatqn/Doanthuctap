@@ -1,4 +1,4 @@
-.container-left{
+.container-left2{
     width: 490px;
     height: 100vh;
     left: -20px;
@@ -7,7 +7,7 @@
     position: fixed;
 }
 
- .logo {
+ .logo2 {
     width: 150px;
     height: 125px;
     left: 170px;
@@ -15,7 +15,7 @@
     position: fixed;
 }
 
-.login form{
+.login2 form{
     font-family: Nunito;
     font-size: 18px;
     font-style: normal;
@@ -29,17 +29,17 @@
     padding: 10px 24px;
 }
 
- .eye-flash { 
+ .eye-flash2 { 
     position: absolute;
     left: 330px;
     top: 125px;   
 }
 
-.login-form div{
+.login-form2 div{
     padding: 1%;
 }
 
-.login-form div input{
+.login-form2 div input{
     border-radius: 5px;
     border-color: gray;
     padding: 10px 150px 10px 12px;
@@ -47,17 +47,29 @@
     top: 82px;
 }
 
- .forgot-password{
+.red-warning{
+    font-size: 14px;
+    color: #E73F3F;
+    
+    
+    
+}
+
+ .forgot-password2{
     font-size: 14px;
     position: relative;
     width: 102px;
     height: 20px;
     left: 125px;
     color: #E73F3F;
-    top: 20px;
+    bottom: 10px;
+}
+.text-link5{
+    color: inherit;
+    text-decoration: inherit;
 }
 
- .btn-login{
+ .btn-login2{
     box-shadow: 0px 0px 6px #E7E9F2;
     border-radius: 8px;
     background: #FF9138;
@@ -68,13 +80,12 @@
     padding: 10px 24px;
     width: 160px;
     height: 40px;
-    top: 25px;
     right: 10px;
     margin-left: 25%;
     color: white;
 }
 
- .background{
+ .background2{
     position: fixed;
     width: 680px;
     height: 80vh;
@@ -82,14 +93,14 @@
     top: 80px;
 }
 
- .container-Text {
+ .container-Text2 {
     font-family: Nunito;
     font-style: normal;
     text-align: left;
     color: #FF7506;
 }
 
- .text-1{
+ .text11{
     font-weight: normal;
     font-size: 34px;
     line-height: 51px;
@@ -101,7 +112,7 @@
     top: 290px;
 }
 
- .text-2{
+ .text22{
     font-family: Nunito Verdana, Geneva, Tahoma, sans-serif ;
     font-size: 36px;
     line-height: 54px;

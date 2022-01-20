@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { useState } from 'react';
-import './login.css';
+import './loginform.css';
 import logo from './img/LogoAlta.png';
 import background from './img/Background.png';
 import vector from './img/Vector.png';
@@ -29,11 +29,12 @@ render(){
                     </div>
                     <div><img src={vector} alt='Vector' className ='eye-flash'></img></div>
                     <div>
-                        <button className='btn-login' onClick={this.handleClick}>Đăng nhập</button>
+                        <Link className="text-link" to="/dashboard">
+                            <button className='btn-login' onClick={this.handleClick}>Đăng nhập</button>
+                        </Link>
                     </div>
                     <div>
-                        {/* <label className='forgot-pass' onClick={this.handleClick}>Quên mật khẩu?</label> */}
-                        <Link className="link-tag" to="/forgot">
+                        <Link className="text-link1" to="/forgot">
                             <span className=" forgot-password">Quên mật khẩu</span>
                         </Link>
                     </div>

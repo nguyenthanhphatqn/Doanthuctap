@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './forgotpass.css';
 import logo from './img/LogoAlta.png';
 import frame from './img/Frame.png';
-
+import { Link} from 'react-router-dom';
 class ForgotPass extends Component {
 
 render(){
@@ -18,8 +18,12 @@ render(){
                             <input className='email' type="text"/>
                         </div>
                         <div>
-                            <button className='cancel' onClick={() => this.handleClick()}><p>Hủy</p></button>
-                            <button className='continue'><p>Tiếp tục</p></button>
+                            <Link className="text-link6" to="/login">
+                                <button className='cancel' onClick={() => this.handleClick()}><p>Hủy</p></button>
+                            </Link>
+                            <Link className="text-link7" to="/reset">
+                                <button className='continue'onClick={ () => this.handleClick()}><p>Tiếp tục</p></button>
+                            </Link>
                         </div>
                     </div>
                 </form>

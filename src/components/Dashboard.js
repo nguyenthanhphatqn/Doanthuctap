@@ -1,5 +1,6 @@
-import React, {Component} from "react";
-import './dashboard.css'
+import React, {useState} from "react";
+import './dashboard.css';
+import { Link  } from 'react-router-dom';
 import logo from './img/LogoAlta.png';
 import iconDashboard from './img/icon/icon-dashboard.png';
 import iconEquipment from './img/icon/icon-equipment.png';
@@ -9,17 +10,31 @@ import iconReport from './img/icon/icon-report.png';
 import iconSetting from './img/icon/icon-setting.png';
 import iconMore from './img/icon/icon-more.png';
 import iconLogout from './img/icon/icon-logout.png';
-class Dashboard extends Component {
 
-render(){
+    export default function SlideBar() {
+        const slidebars = document.querySelectorAll('.MenuBarDetailItem')
+     
+    slidebars.forEach( slidebar => {
+      slidebar.onclick = function () {
+          document.querySelector('.MenuBarDetailItem.activeSlidebar').classList.remove('activeSlidebar')   
+          this.classList.add('activeSlidebar')                   
+            }
+        }
+    )          
+      const [show ,setShow] = useState(false) 
+      const handleShow = () =>{
+          setShow(!show)
+      
+      }
+// render(){
     return (
         <div className="MenuBar">
               <div className="MenuBarLogo">
-                  <img src={logo} alt = ""/>
+                  <img src={logo} alt = "" width={80} height={80} />
               </div>
               <div className="MenuBarDetail">
                   <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconDashboard} alt= "" />
                       </div>
                       <span className="MenuBarDetailItemName">
@@ -27,55 +42,64 @@ render(){
                       </span>
                   </div>
                   <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconEquipment} alt="" />
                       </div>
                       <span className="MenuBarDetailItemName">
                       Thiết bị
                       </span>
                   </div> <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconService} alt="" />
                       </div>
                       <span className="MenuBarDetailItemName">
                       Dịch vụ
                       </span>
                   </div> <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconNumber} alt="" />
                       </div>
                       <span className="MenuBarDetailItemName">
                       Cấp số
                       </span>
                   </div> <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconReport} alt="" />
                       </div>
                       <span className="MenuBarDetailItemName">
                       Báo cáo
                       </span>
                   </div> <div className="MenuBarDetailItem">
-                      <div className="MenuBarDetailItemimg">
+                      <div className="MenuBarDetailItemImage">
                           <img src={iconSetting} alt="" />
                       </div>
                       <span className="MenuBarDetailItemName">
                             Cài đặt hệ thống
-                            <div className="settingMore">
+                            <div className="settingMore" onClick={handleShow}>
                                 <img src={iconMore} alt="" />
                             </div>
                       </span>
                   </div>
-
-                 
+                  { show ?(
+                    <ul className="systemDropdown">
+                      <li>Quản lý vai trò</li>
+                      <li>Quản lý tài khoản</li>
+                      <li>Nhật ký người dùng</li>         
+                    </ul>
+                  )
+                  : undefined
+                  }  
               </div>
+                <Link to="/login" className="text-linkn">
               <div className="MenuBarButton">
-                      <div className="MenuBarButtonimg">
+                      <div className="MenuBarButtonImage">
                           <img src={iconLogout} alt="" />
                       </div>
-                      <span> Đăng xuất</span>
+                      <span className="button-logout"> Đăng xuất</span>
                   </div>
+                </Link>
         </div>
         )
-    }
+//     }
 }
-export default Dashboard;
+// export default Dashboard;

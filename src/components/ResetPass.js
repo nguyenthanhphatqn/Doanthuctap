@@ -3,7 +3,7 @@ import './resetpass.css';
 import logo from './img/LogoAlta.png';
 import frame from './img/Frame.png';
 import vector from './img/Vector.png';
-
+import { Link} from 'react-router-dom';
 class ResetPass extends Component {
 render(){
     return (
@@ -23,7 +23,9 @@ render(){
                     </div>
                     <div><img src={vector} alt='Vector' className ='eye-flash-2'></img></div>
                     <div>
+                        <Link className="text-link8" to="/login">
                         <button className='confirm'>Xác nhận</button>
+                        </Link>
                     </div>
                 </form>
             </div>
